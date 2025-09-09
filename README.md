@@ -134,7 +134,7 @@ civicops-311-gainesville/
 
 ---
 
-## Screenshots
+## PowerBI Dashboard
 
 Temporary dashboard preview :
 
