@@ -110,7 +110,7 @@ curl -X POST "http://localhost:8000/score_ticket" \
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 ```
 civicops-311-gainesville/
 ├── etl/                    # Data extraction and loading
@@ -149,7 +149,7 @@ Interactive API documentation available at http://localhost:8000/docs:
 
 ---
 
-## 🎯 Business Value
+## Business Value
 
 ### **For City Operations Teams:**
 - **Prioritize high-risk tickets** before they breach SLA
@@ -162,12 +162,12 @@ A "Road Repair" ticket with 150-ticket backlog and recent volume surge gets 78% 
 
 ---
 
-## 📚 References
+## References
 See `reference_links.md` for all resources and documentation.
 
 ---
 
-## 🧠 SQL Examples
+## SQL Examples
 Useful, production-ready queries are available in `db/example_queries.sql`:
 - SLA attainment overall and by `request_type`
 - P90 response time by `request_type`
