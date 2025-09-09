@@ -217,7 +217,7 @@ Top types: General Code Issue (11), Other (5), Trash/Debris–Private (5), Road 
 
 ---
 
-## 🏆 Achievements
+## Achievements
 - ✅ **Working ML Pipeline** - End-to-end data science workflow
 - ✅ **Production-Ready API** - FastAPI service with 70%+ accuracy
 - ✅ **Real Data Integration** - Live Socrata API connection
