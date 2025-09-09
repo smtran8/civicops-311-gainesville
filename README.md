@@ -7,7 +7,7 @@ Cities run on tickets. Every day, residents file non‑emergency requests (potho
 
 ---
 
-## ✅ Completed Features
+## Completed Features
 - **ETL Pipeline:** Socrata API → Postgres (Docker) - 5,000+ tickets processed
 - **Data Validation:** Pydantic models for data quality
 - **Feature Engineering:** Rolling volumes, backlog analysis, request type complexity
@@ -17,7 +17,7 @@ Cities run on tickets. Every day, residents file non‑emergency requests (potho
 
 ---
 
-## 🚀 Quick Start
+## All steps taken
 
 
 ### 1. Setup
@@ -28,7 +28,7 @@ cd civicops-311-gainesville
 
 # Create environment file
 cp .env.example .env
-# Edit .env with your Socrata App Token (optional)
+
 
 # Start Postgres
 docker-compose up -d
@@ -64,7 +64,7 @@ uvicorn api.main:app --reload
 
 ---
 
-## 📊 Model Performance
+## 4. Model Performance
 
 ### **Random Forest Model Results:**
 - **ROC-AUC Score:** 0.703 (Good performance)
@@ -80,7 +80,7 @@ uvicorn api.main:app --reload
 
 ---
 
-## 🔧 API Usage
+## API Usage
 
 ### **Score a Ticket:**
 ```bash
@@ -162,17 +162,8 @@ A "Road Repair" ticket with 150-ticket backlog and recent volume surge gets 78% 
 
 ---
 
-## 🔮 Next Steps
-- [ ] Power BI dashboard for operations teams
-- [ ] Weather data enrichment (Meteostat)
-- [ ] Geospatial analysis (district boundaries)
-- [ ] Model retraining pipeline
-- [ ] Production deployment (Cloud Run)
-
----
-
 ## 📚 References
-See `reference_links.md` for all key resources and documentation.
+See `reference_links.md` for all resources and documentation.
 
 ---
 
