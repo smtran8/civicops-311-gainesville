@@ -1,36 +1,27 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from typing import List
-from datetime import datetime
 import joblib
 import pandas as pd
+import numpy as np
+from typing import List, Optional
 import os
+from datetime import datetime
 
 app = FastAPI(
-    title="CivicOps-311 SLA Risk API",
-    description="Predict SLA breach risk for Gainesville 311 service requests",
+    title="CivicOps 311 SLA Risk API",
+    description="API for predicting SLA breach risk for 311 service requests",
     version="1.0.0"
 )
 
 # Load the trained model and encoders
 try:
-    # Try to load from local files first (for development)
-    if os.path.exists('modeling/sla_breach_model.pkl'):
-        model = joblib.load('modeling/sla_breach_model.pkl')
-        le_request_type = joblib.load('modeling/le_request_type.pkl')
-        le_status = joblib.load('modeling/le_status.pkl')
-        print("Model and encoders loaded successfully!")
-    else:
-        # For Vercel deployment, we'll use a simple mock model
-        model = None
-        le_request_type = None
-        le_status = None
-        print("Running in demo mode - no model loaded")
+    model = joblib.load('modeling/sla_breach_model.pkl')
+    le_request_type = joblib.load('modeling/le_request_type.pkl')
+    le_status = joblib.load('modeling/le_status.pkl')
+    print("Model and encoders loaded successfully!")
 except Exception as e:
     print(f"Error loading model: {e}")
     model = None
-    le_request_type = None
-    le_status = None
 
 class TicketRequest(BaseModel):
     request_type: str
@@ -52,17 +43,7 @@ async def root():
 async def score_ticket(ticket: TicketRequest):
     """Score a ticket for SLA breach risk"""
     if model is None:
-        # Demo mode - return mock prediction
-        return TicketResponse(
-            ticket_id=f"DEMO_{datetime.now().strftime('%Y%m%d_%H%M%S')}",
-            sla_breach_probability=0.65,
-            risk_level="Medium",
-            top_factors=[
-                f"Request type: {ticket.request_type}",
-                f"Backlog: {ticket.backlog_at_creation} tickets",
-                f"Rolling volume: {ticket.rolling_7d_volume} tickets"
-            ]
-        )
+        raise HTTPException(status_code=500, detail="Model not loaded")
     
     try:
         # Prepare features for prediction
@@ -73,7 +54,7 @@ async def score_ticket(ticket: TicketRequest):
             'status_encoded': le_status.transform([ticket.status])[0]
         }])
         
-        # Get prediction probability
+        # Make prediction
         probability = model.predict_proba(features)[0][1]
         
         # Determine risk level
@@ -84,7 +65,7 @@ async def score_ticket(ticket: TicketRequest):
         else:
             risk_level = "Low"
         
-        # Generate top factors
+        # Generate top factors (simplified)
         top_factors = [
             f"Backlog: {ticket.backlog_at_creation} tickets",
             f"Rolling volume: {ticket.rolling_7d_volume} tickets",

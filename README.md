@@ -142,9 +142,7 @@ civicops-311-gainesville/
 
 Temporary dashboard preview :
 
-![Power BI Overview]
-![City Tickets Project PowerBI Report](https://github.com/user-attachments/assets/99d1a0e2-a2e2-4bd3-b760-601d1bcc9c04)
-
+![Power BI Overview](dashboards/screenshots/powerbi_overview_temp.jpg)
 
 ### FastAPI Documentation
 
@@ -231,8 +229,8 @@ Top types: General Code Issue (11), Other (5), Trash/Debris–Private (5), Road 
 
 ---
 
-## Achievements
-- **Working ML Pipeline** - End-to-end data science workflow
-- **Production-Ready API** - FastAPI service with 70%+ accuracy
-- **Real Data Integration** - Live Socrata API connection
-- **Scalable Architecture** - Docker, PostgreSQL, modular design
+## 🏆 Achievements
+- ✅ **Working ML Pipeline** - End-to-end data science workflow
+- ✅ **Production-Ready API** - FastAPI service with 70%+ accuracy
+- ✅ **Real Data Integration** - Live Socrata API connection
+- ✅ **Scalable Architecture** - Docker, PostgreSQL, modular design
