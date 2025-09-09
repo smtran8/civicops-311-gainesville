@@ -19,15 +19,11 @@ Cities run on tickets. Every day, residents file non‑emergency requests (potho
 
 ## 🚀 Quick Start
 
-### 1. Prerequisites
-- Python 3.9+
-- Docker Desktop (for Postgres)
-- Git
 
-### 2. Setup
+### 1. Setup
 ```bash
 # Clone and navigate to project
-git clone <your-repo-url>
+git clone 
 cd civicops-311-gainesville
 
 # Create environment file
@@ -41,7 +37,7 @@ docker-compose up -d
 pip install -r requirements.txt
 ```
 
-### 3. Run the Pipeline
+### 2. Run the Pipeline
 ```bash
 # Extract data from Socrata (5,000 rows)
 python3 etl/extract_socrata.py
@@ -59,7 +55,7 @@ python3 features/rolling_features.py
 python3 modeling/train.py
 ```
 
-### 4. Launch API Service
+### 3. Launch API Service
 ```bash
 uvicorn api.main:app --reload
 ```
