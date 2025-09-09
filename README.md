@@ -142,7 +142,8 @@ civicops-311-gainesville/
 
 Temporary dashboard preview :
 
-![Power BI Overview](dashboards/screenshots/powerbi_overview_temp.jpg)
+![City Tickets Project PowerBI Report](https://github.com/user-attachments/assets/afee1032-5927-4693-b6a9-bfa4539b9812)
+
 
 ### FastAPI Documentation
 
