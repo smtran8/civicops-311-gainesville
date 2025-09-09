@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.venv
+venv/
+ENV/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Data exports and raw data
+/data/exports/
+/data/raw/
+
+# Environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Power BI
+*.pbix
+
+# Misc
+*.log

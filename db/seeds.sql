@@ -1,0 +1,2 @@
+-- seeds.sql
+-- Insert initial or test data here.

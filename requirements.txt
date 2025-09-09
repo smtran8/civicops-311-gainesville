@@ -1,0 +1,16 @@
+pandas
+numpy
+pyarrow
+scikit-learn
+shap
+requests
+sodapy
+SQLAlchemy
+psycopg2-binary
+fastapi
+uvicorn
+pydantic
+great_expectations
+pytest
+ruff
+python-dotenv
